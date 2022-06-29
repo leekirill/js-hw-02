@@ -36,7 +36,7 @@ function onClickOverlayCloseLightBox(event) {
     lightBox.classList.remove("is-open");
     lightBoxImage.removeAttribute("src");
     lightBoxImage.removeAttribute("alt");
-    window.addEventListener("keydown", onClickEscapeCloseLightBox);
+    window.removeEventListener("keydown", onClickEscapeCloseLightBox);
   }
 }
 function onClickEscapeCloseLightBox(event) {
@@ -44,15 +44,9 @@ function onClickEscapeCloseLightBox(event) {
     lightBox.classList.remove("is-open");
     lightBoxImage.removeAttribute("src");
     lightBoxImage.removeAttribute("alt");
-    window.addEventListener("keydown", onClickEscapeCloseLightBox);
+    window.removeEventListener("keydown", onClickEscapeCloseLightBox);
   }
 }
 
-// function onEscapeCloseLightBox(event) {
-//   console.log(lightBox);
-//   //   if (event.code === "Escape") {
-//   //     lightBox.classList.remove("is-open");
-//   //     lightBoxImage.removeAttribute("src");
-//   //     lightBoxImage.removeAttribute("alt");
-//   //   }
-// }
+// нужно чуть переоформить html как в задаче
+// сделать стрелочки <- ->
