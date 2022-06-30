@@ -1,28 +1,78 @@
+// импортируем галерею из другого js файла
+
 import galleryItems from "./gallery-items.js";
 
-const imagesEl = document.querySelector(".gallery");
+// находим элементы в html
+
+const galleryEl = document.querySelector(".gallery");
 const lightBox = document.querySelector(".lightbox");
 const lightBoxOverlay = document.querySelector(".lightbox__overlay");
 const lightBoxImage = document.querySelector(".lightbox__image");
 const closeButton = document.querySelector('[data-action="close-lightbox"]');
 
+// парсим разметку
+
 galleryItems.map((e) =>
-  imagesEl.insertAdjacentHTML(
+  galleryEl.insertAdjacentHTML(
     "afterbegin",
-    `<img srcset='${e.preview}' src='${e.original}'  alt='${e.description}' class='gallery__item gallery__image gallery__link'>`
+    `<li class="gallery__item">
+  <a
+    class="gallery__link"
+    href="https://developer.mozilla.org/ru/docs/Web/API/Event/preventDefault"
+  >
+    <img
+      class="gallery__image"
+      src="${e.preview}"
+      data-source="${e.original}"
+      alt="${e.description}"
+    />
+  </a>
+</li>`
   )
 );
 
-imagesEl.addEventListener("click", onClickOpenLightBox);
+// добавляем события
+
+galleryEl.addEventListener("click", onClickOpenLightBox);
 lightBox.addEventListener("click", onClickCloseLightBox);
 lightBox.addEventListener("click", onClickOverlayCloseLightBox);
 
+// прописываем функции событий
+
+// для открытия окна
 function onClickOpenLightBox(event) {
-  lightBox.classList.add("is-open");
-  lightBoxImage.setAttribute("src", `${event.target.src}`);
-  lightBoxImage.setAttribute("alt", `${event.target.alt}`);
-  window.addEventListener("keydown", onClickEscapeCloseLightBox);
+  // чтоб страница не перезагружалась
+
+  // ЭТА ШТУКА РЕШИЛА ПРОБЛЕМУ С ССЫЛКОЙ
+
+  event.preventDefault();
+
+  // находим event.target
+  const target = event.target;
+
+  // изначально событие стоит на всей галерее (ul),
+  // но мы должны сделегировать события на IMG
+  // по условию если nodeName у таргета === IMG, то выполняем событие
+
+  // РЕШАЕТ ПРОБЛЕМУ ОТКРЫТИЯ ОКНА ПРИ КЛИКЕ НА ПРОСТРАНСТВО МЕЖДУ КАРТИНКАМИ
+
+  if (target.nodeName === "IMG") {
+    // добавляем класс чтоб окрылось окно
+    lightBox.classList.add("is-open");
+
+    // добавялем к картинке в окне атрибуты (ссылку на картинку и альт)
+    lightBoxImage.setAttribute(
+      "src",
+      `${event.target.getAttribute("data-source")}`
+    );
+    lightBoxImage.setAttribute("alt", `${event.target.alt}`);
+
+    // добавляем слушателя по кнопке. при открытии окна начинается слушание по клавишам
+    window.addEventListener("keydown", onClickEscapeCloseLightBox);
+  }
 }
+
+// для закрытия окна
 function onClickCloseLightBox(event) {
   if (event.target === closeButton) {
     lightBox.classList.remove("is-open");
@@ -31,6 +81,7 @@ function onClickCloseLightBox(event) {
     window.removeEventListener("keydown", onClickEscapeCloseLightBox);
   }
 }
+// для закрытия окна по оверлею
 function onClickOverlayCloseLightBox(event) {
   if (event.target === lightBoxOverlay) {
     lightBox.classList.remove("is-open");
@@ -39,6 +90,7 @@ function onClickOverlayCloseLightBox(event) {
     window.removeEventListener("keydown", onClickEscapeCloseLightBox);
   }
 }
+// для закрытия окна по ESC
 function onClickEscapeCloseLightBox(event) {
   if (event.code === "Escape") {
     lightBox.classList.remove("is-open");
@@ -48,5 +100,7 @@ function onClickEscapeCloseLightBox(event) {
   }
 }
 
-// нужно чуть переоформить html как в задаче
+//////// что нужно решить
+
+// мб переделать не инлайновым html, а через el.createElement
 // сделать стрелочки <- ->
