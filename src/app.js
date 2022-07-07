@@ -1,6 +1,6 @@
 // импортируем галерею из другого js файла
 
-import galleryItems from "./gallery-items.js";
+import galleryItems from "../images/gallery-items.js";
 
 // находим элементы в html
 
@@ -11,16 +11,16 @@ const lightBoxImage = document.querySelector(".lightbox__image");
 const closeButton = document.querySelector('[data-action="close-lightbox"]');
 
 // парсим разметку
-
 galleryItems.map((e) =>
   galleryEl.insertAdjacentHTML(
     "afterbegin",
     `<li class="gallery__item">
   <a
     class="gallery__link"
-    href="https://developer.mozilla.org/ru/docs/Web/API/Event/preventDefault"
+    href="${e.original}"
   >
     <img
+      loading="lazy"
       class="gallery__image"
       src="${e.preview}"
       data-source="${e.original}"
@@ -56,20 +56,21 @@ function onClickOpenLightBox(event) {
 
   // РЕШАЕТ ПРОБЛЕМУ ОТКРЫТИЯ ОКНА ПРИ КЛИКЕ НА ПРОСТРАНСТВО МЕЖДУ КАРТИНКАМИ
 
-  if (target.nodeName === "IMG") {
-    // добавляем класс чтоб окрылось окно
-    lightBox.classList.add("is-open");
-
-    // добавялем к картинке в окне атрибуты (ссылку на картинку и альт)
-    lightBoxImage.setAttribute(
-      "src",
-      `${event.target.getAttribute("data-source")}`
-    );
-    lightBoxImage.setAttribute("alt", `${event.target.alt}`);
-
-    // добавляем слушателя по кнопке. при открытии окна начинается слушание по клавишам
-    window.addEventListener("keydown", onClickEscapeCloseLightBox);
+  if (target.nodeName !== "IMG") {
+    return;
   }
+  // добавляем класс чтоб окрылось окно
+  lightBox.classList.add("is-open");
+
+  // добавялем к картинке в окне атрибуты (ссылку на картинку и альт)
+  lightBoxImage.setAttribute(
+    "src",
+    `${event.target.getAttribute("data-source")}`
+  );
+  lightBoxImage.setAttribute("alt", `${event.target.alt}`);
+
+  // добавляем слушателя по кнопке. при открытии окна начинается слушание по клавишам
+  window.addEventListener("keydown", onClickEscapeCloseLightBox);
 }
 
 // для закрытия окна
@@ -102,5 +103,4 @@ function onClickEscapeCloseLightBox(event) {
 
 //////// что нужно решить
 
-// мб переделать не инлайновым html, а через el.createElement
 // сделать стрелочки <- ->

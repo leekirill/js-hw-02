@@ -1,0 +1,25 @@
+{
+  "name": "js-hw-02",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leekirill/js-hw-02.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leekirill/js-hw-02/issues"
+  },
+  "homepage": "https://github.com/leekirill/js-hw-02#readme",
+  "devDependencies": {
+    "parcel": "^2.6.2"
+  }
+}
