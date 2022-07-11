@@ -1,5 +1,5 @@
 export default itemsMarkup;
-import * as el from "./elements";
+import * as el from "./elements.js";
 
 function itemsMarkup(array) {
   return array.map((e) =>

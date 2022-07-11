@@ -2,11 +2,12 @@
   "name": "js-hw-02",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html --public-url /js-hw-02.git/",
+    "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -18,8 +19,12 @@
   "bugs": {
     "url": "https://github.com/leekirill/js-hw-02/issues"
   },
-  "homepage": "https://github.com/leekirill/js-hw-02#readme",
+  "homepage": "https://leekirill.github.io/js-hw-02",
   "devDependencies": {
-    "parcel": "^2.6.2"
+    "parcel": "^2.6.2",
+    "parcel-plugin-nuke-dist": "^1.0.1"
+  },
+  "dependencies": {
+    "gh-pages": "^4.0.0"
   }
 }
