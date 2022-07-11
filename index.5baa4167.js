@@ -534,15 +534,15 @@ function hmrAcceptRun(bundle, id) {
 },{}],"igcvL":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 // импортируем галерею из другого js файла
-var _galleryItems = require("/images/gallery-items");
+var _galleryItems = require("./images/gallery-items");
 var _galleryItemsDefault = parcelHelpers.interopDefault(_galleryItems);
-var _markup = require("/src/markup");
+var _markup = require("./src/markup");
 var _markupDefault = parcelHelpers.interopDefault(_markup);
-var _listeners = require("/src/listeners");
+var _listeners = require("./src/listeners");
 (0, _markupDefault.default)((0, _galleryItemsDefault.default));
 console.log(_listeners); // сделать стрелочки <- ->
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","/images/gallery-items":"8xXnK","/src/markup":"avFhm","/src/listeners":"1OSaa"}],"gkKU3":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./images/gallery-items":"8xXnK","./src/markup":"avFhm","./src/listeners":"1OSaa"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
