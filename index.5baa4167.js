@@ -534,15 +534,45 @@ function hmrAcceptRun(bundle, id) {
 },{}],"igcvL":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 // импортируем галерею из другого js файла
-var _galleryItemsJs = require("/images/gallery-items.js");
-var _galleryItemsJsDefault = parcelHelpers.interopDefault(_galleryItemsJs);
-var _markupJs = require("/src/markup.js");
-var _markupJsDefault = parcelHelpers.interopDefault(_markupJs);
-var _listenersJs = require("/src/listeners.js");
-(0, _markupJsDefault.default)((0, _galleryItemsJsDefault.default));
-console.log(_listenersJs); // сделать стрелочки <- ->
+var _galleryItems = require("/images/gallery-items");
+var _galleryItemsDefault = parcelHelpers.interopDefault(_galleryItems);
+var _markup = require("/src/markup");
+var _markupDefault = parcelHelpers.interopDefault(_markup);
+var _listeners = require("/src/listeners");
+(0, _markupDefault.default)((0, _galleryItemsDefault.default));
+console.log(_listeners); // сделать стрелочки <- ->
 
-},{"/images/gallery-items.js":"8xXnK","/src/markup.js":"avFhm","/src/listeners.js":"1OSaa","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8xXnK":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","/images/gallery-items":"8xXnK","/src/markup":"avFhm","/src/listeners":"1OSaa"}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"8xXnK":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 exports.default = [
@@ -819,37 +849,7 @@ exports.default = [
     ``, 
 ];
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, "__esModule", {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}],"avFhm":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"avFhm":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _elementsJs = require("./elements.js");
