@@ -3,7 +3,7 @@ export {
   onClickOverlayCloseLightBox,
   onClickEscapeCloseLightBox,
 };
-import * as el from "./elements";
+import * as el from "./elements.js";
 
 function onClickCloseLightBox(event) {
   if (event.target === el.closeButton) {

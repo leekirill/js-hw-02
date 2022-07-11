@@ -1,6 +1,6 @@
 export default onClickOpenLightBox;
-import * as el from "./elements";
-import { onClickEscapeCloseLightBox } from "./closeLightBox";
+import * as el from "./elements.js";
+import { onClickEscapeCloseLightBox } from "./closeLightBox.js";
 
 function onClickOpenLightBox(event) {
   // чтоб страница не перезагружалась
