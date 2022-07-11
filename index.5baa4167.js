@@ -538,10 +538,10 @@ var _galleryItemsJs = require("/images/gallery-items.js");
 var _galleryItemsJsDefault = parcelHelpers.interopDefault(_galleryItemsJs);
 var _markupJs = require("/src/markup.js");
 var _markupJsDefault = parcelHelpers.interopDefault(_markupJs);
-var _listeners = require("./src/listeners");
+var _listenersJs = require("./src/listeners.js");
 (0, _markupJsDefault.default)((0, _galleryItemsJsDefault.default)); // сделать стрелочки <- ->
 
-},{"/images/gallery-items.js":"8xXnK","/src/markup.js":"avFhm","./src/listeners":"1OSaa","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8xXnK":[function(require,module,exports) {
+},{"/images/gallery-items.js":"8xXnK","/src/markup.js":"avFhm","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./src/listeners.js":"1OSaa"}],"8xXnK":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 exports.default = [
