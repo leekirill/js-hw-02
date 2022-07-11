@@ -539,9 +539,10 @@ var _galleryItemsJsDefault = parcelHelpers.interopDefault(_galleryItemsJs);
 var _markupJs = require("/src/markup.js");
 var _markupJsDefault = parcelHelpers.interopDefault(_markupJs);
 var _listenersJs = require("/src/listeners.js");
-(0, _markupJsDefault.default)((0, _galleryItemsJsDefault.default)); // сделать стрелочки <- ->
+(0, _markupJsDefault.default)((0, _galleryItemsJsDefault.default));
+console.log(_listenersJs); // сделать стрелочки <- ->
 
-},{"/images/gallery-items.js":"8xXnK","/src/markup.js":"avFhm","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","/src/listeners.js":"1OSaa"}],"8xXnK":[function(require,module,exports) {
+},{"/images/gallery-items.js":"8xXnK","/src/markup.js":"avFhm","/src/listeners.js":"1OSaa","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8xXnK":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 exports.default = [
@@ -870,7 +871,7 @@ function itemsMarkup(array) {
     </li>`));
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./elements.js":"aQAKX"}],"aQAKX":[function(require,module,exports) {
+},{"./elements.js":"aQAKX","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aQAKX":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "galleryEl", ()=>galleryEl);
@@ -898,7 +899,7 @@ const galleryListener = _elementsJs.galleryEl.addEventListener("click", (0, _ope
 const closeBtnListener = _elementsJs.lightBox.addEventListener("click", _closeLightBoxJs.onClickCloseLightBox);
 const overlayListener = _elementsJs.lightBox.addEventListener("click", _closeLightBoxJs.onClickOverlayCloseLightBox);
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../src/elements.js":"aQAKX","./openLightBox.js":"4QexT","../src/closeLightBox.js":"k0yUt"}],"4QexT":[function(require,module,exports) {
+},{"../src/elements.js":"aQAKX","./openLightBox.js":"4QexT","../src/closeLightBox.js":"k0yUt","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4QexT":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _elementsJs = require("./elements.js");
@@ -924,7 +925,7 @@ function onClickOpenLightBox(event) {
     window.addEventListener("keydown", (0, _closeLightBoxJs.onClickEscapeCloseLightBox));
 }
 
-},{"./elements.js":"aQAKX","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./closeLightBox.js":"k0yUt"}],"k0yUt":[function(require,module,exports) {
+},{"./elements.js":"aQAKX","./closeLightBox.js":"k0yUt","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"k0yUt":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "onClickCloseLightBox", ()=>onClickCloseLightBox);
