@@ -890,19 +890,19 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "galleryListener", ()=>galleryListener);
 parcelHelpers.export(exports, "closeBtnListener", ()=>closeBtnListener);
 parcelHelpers.export(exports, "overlayListener", ()=>overlayListener);
-var _elements = require("../src/elements");
-var _openLightBox = require("./openLightBox");
-var _openLightBoxDefault = parcelHelpers.interopDefault(_openLightBox);
-var _closeLightBox = require("../src/closeLightBox");
-const galleryListener = _elements.galleryEl.addEventListener("click", (0, _openLightBoxDefault.default));
-const closeBtnListener = _elements.lightBox.addEventListener("click", _closeLightBox.onClickCloseLightBox);
-const overlayListener = _elements.lightBox.addEventListener("click", _closeLightBox.onClickOverlayCloseLightBox);
+var _elementsJs = require("../src/elements.js");
+var _openLightBoxJs = require("./openLightBox.js");
+var _openLightBoxJsDefault = parcelHelpers.interopDefault(_openLightBoxJs);
+var _closeLightBoxJs = require("../src/closeLightBox.js");
+const galleryListener = _elementsJs.galleryEl.addEventListener("click", (0, _openLightBoxJsDefault.default));
+const closeBtnListener = _elementsJs.lightBox.addEventListener("click", _closeLightBoxJs.onClickCloseLightBox);
+const overlayListener = _elementsJs.lightBox.addEventListener("click", _closeLightBoxJs.onClickOverlayCloseLightBox);
 
-},{"../src/elements":"aQAKX","./openLightBox":"4QexT","../src/closeLightBox":"k0yUt","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4QexT":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../src/elements.js":"aQAKX","./openLightBox.js":"4QexT","../src/closeLightBox.js":"k0yUt"}],"4QexT":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _elements = require("./elements");
-var _closeLightBox = require("./closeLightBox");
+var _elementsJs = require("./elements.js");
+var _closeLightBoxJs = require("./closeLightBox.js");
 exports.default = onClickOpenLightBox;
 function onClickOpenLightBox(event) {
     // чтоб страница не перезагружалась
@@ -916,48 +916,48 @@ function onClickOpenLightBox(event) {
     // РЕШАЕТ ПРОБЛЕМУ ОТКРЫТИЯ ОКНА ПРИ КЛИКЕ НА ПРОСТРАНСТВО МЕЖДУ КАРТИНКАМИ
     if (target.nodeName !== "IMG") return;
     // добавляем класс чтоб окрылось окно
-    _elements.lightBox.classList.add("is-open");
+    _elementsJs.lightBox.classList.add("is-open");
     // добавялем к картинке в окне атрибуты (ссылку на картинку и альт)
-    _elements.lightBoxImage.setAttribute("src", `${event.target.getAttribute("data-source")}`);
-    _elements.lightBoxImage.setAttribute("alt", `${event.target.alt}`);
+    _elementsJs.lightBoxImage.setAttribute("src", `${event.target.getAttribute("data-source")}`);
+    _elementsJs.lightBoxImage.setAttribute("alt", `${event.target.alt}`);
     // добавляем слушателя по кнопке. при открытии окна начинается слушание по клавишам
-    window.addEventListener("keydown", (0, _closeLightBox.onClickEscapeCloseLightBox));
+    window.addEventListener("keydown", (0, _closeLightBoxJs.onClickEscapeCloseLightBox));
 }
 
-},{"./elements":"aQAKX","./closeLightBox":"k0yUt","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"k0yUt":[function(require,module,exports) {
+},{"./elements.js":"aQAKX","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./closeLightBox.js":"k0yUt"}],"k0yUt":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "onClickCloseLightBox", ()=>onClickCloseLightBox);
 parcelHelpers.export(exports, "onClickOverlayCloseLightBox", ()=>onClickOverlayCloseLightBox);
 parcelHelpers.export(exports, "onClickEscapeCloseLightBox", ()=>onClickEscapeCloseLightBox);
-var _elements = require("./elements");
+var _elementsJs = require("./elements.js");
 function onClickCloseLightBox(event) {
-    if (event.target === _elements.closeButton) {
-        _elements.lightBox.classList.remove("is-open");
-        _elements.lightBoxImage.removeAttribute("src");
-        _elements.lightBoxImage.removeAttribute("alt");
+    if (event.target === _elementsJs.closeButton) {
+        _elementsJs.lightBox.classList.remove("is-open");
+        _elementsJs.lightBoxImage.removeAttribute("src");
+        _elementsJs.lightBoxImage.removeAttribute("alt");
         window.removeEventListener("keydown", onClickEscapeCloseLightBox);
     }
 }
 // для закрытия окна по оверлею
 function onClickOverlayCloseLightBox(event) {
-    if (event.target === _elements.lightBoxOverlay) {
-        _elements.lightBox.classList.remove("is-open");
-        _elements.lightBoxImage.removeAttribute("src");
-        _elements.lightBoxImage.removeAttribute("alt");
+    if (event.target === _elementsJs.lightBoxOverlay) {
+        _elementsJs.lightBox.classList.remove("is-open");
+        _elementsJs.lightBoxImage.removeAttribute("src");
+        _elementsJs.lightBoxImage.removeAttribute("alt");
         window.removeEventListener("keydown", onClickEscapeCloseLightBox);
     }
 }
 // для закрытия окна по ESC
 function onClickEscapeCloseLightBox(event) {
     if (event.code === "Escape") {
-        _elements.lightBox.classList.remove("is-open");
-        _elements.lightBoxImage.removeAttribute("src");
-        _elements.lightBoxImage.removeAttribute("alt");
+        _elementsJs.lightBox.classList.remove("is-open");
+        _elementsJs.lightBoxImage.removeAttribute("src");
+        _elementsJs.lightBoxImage.removeAttribute("alt");
         window.removeEventListener("keydown", onClickEscapeCloseLightBox);
     }
 }
 
-},{"./elements":"aQAKX","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["euTuy","igcvL"], "igcvL", "parcelRequireabbd")
+},{"./elements.js":"aQAKX","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["euTuy","igcvL"], "igcvL", "parcelRequireabbd")
 
 //# sourceMappingURL=index.5baa4167.js.map
