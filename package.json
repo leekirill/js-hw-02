@@ -2,7 +2,6 @@
   "name": "js-hw-02",
   "version": "1.0.0",
   "description": "",
-
   "scripts": {
     "dev": "parcel index.html",
     "build": "parcel build index.html --public-url /js-hw-02.git/",
