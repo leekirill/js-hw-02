@@ -851,10 +851,10 @@ exports.export = function(dest, destName, get) {
 },{}],"avFhm":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _elements = require("./elements");
+var _elementsJs = require("./elements.js");
 exports.default = itemsMarkup;
 function itemsMarkup(array) {
-    return array.map((e)=>_elements.galleryEl.insertAdjacentHTML("afterbegin", `<li class="gallery__item">
+    return array.map((e)=>_elementsJs.galleryEl.insertAdjacentHTML("afterbegin", `<li class="gallery__item">
     <a
         class="gallery__link"
         href="${e.original}"
@@ -870,7 +870,7 @@ function itemsMarkup(array) {
     </li>`));
 }
 
-},{"./elements":"aQAKX","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aQAKX":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./elements.js":"aQAKX"}],"aQAKX":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "galleryEl", ()=>galleryEl);
