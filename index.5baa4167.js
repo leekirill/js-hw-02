@@ -543,7 +543,7 @@ var _closeLightBox = require("./src/closeLightBox");
 var _elements = require("./src/elements");
 (0, _markupJsDefault.default)((0, _galleryItemsJsDefault.default)); // сделать стрелочки <- ->
 
-},{"./images/gallery-items.js":"8xXnK","./src/markup.js":"avFhm","./src/listeners":"1OSaa","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./src/closeLightBox":"k0yUt","./src/elements":"aQAKX"}],"8xXnK":[function(require,module,exports) {
+},{"./images/gallery-items.js":"8xXnK","./src/markup.js":"avFhm","./src/listeners":"1OSaa","./src/closeLightBox":"k0yUt","./src/elements":"aQAKX","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8xXnK":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 exports.default = [
@@ -888,14 +888,11 @@ const closeButton = document.querySelector('[data-action="close-lightbox"]');
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1OSaa":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "galleryListener", ()=>galleryListener);
-parcelHelpers.export(exports, "closeBtnListener", ()=>closeBtnListener);
-parcelHelpers.export(exports, "overlayListener", ()=>overlayListener);
 var _elementsJs = require("../src/elements.js");
 var _openLightBoxJs = require("./openLightBox.js");
 var _openLightBoxJsDefault = parcelHelpers.interopDefault(_openLightBoxJs);
 var _closeLightBoxJs = require("../src/closeLightBox.js");
+// export { galleryListener, closeBtnListener, overlayListener };
 const galleryListener = _elementsJs.galleryEl.addEventListener("click", (0, _openLightBoxJsDefault.default));
 const closeBtnListener = _elementsJs.lightBox.addEventListener("click", _closeLightBoxJs.onClickCloseLightBox);
 const overlayListener = _elementsJs.lightBox.addEventListener("click", _closeLightBoxJs.onClickOverlayCloseLightBox);
