@@ -2609,16 +2609,6 @@ exports.default = _default;
 },{"handlebars/dist/handlebars.runtime":"hZhY"}],"rW4W":[function(require,module,exports) {
 "use strict";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-Object.defineProperty(exports, "galleryEl", {
-  enumerable: true,
-  get: function () {
-    return _elements.galleryEl;
-  }
-});
-
 var _elements = require("./elements");
 
 var _galleryItems = _interopRequireDefault(require("./gallery-items"));
@@ -2639,4 +2629,4 @@ require("./elements");
 
 require("./markup");
 },{"./listeners":"YYzY","./closeLightBox":"OVlc","./elements":"ZJoy","./markup":"rW4W"}]},{},["vZyd"], null)
-//# sourceMappingURL=/js-hw-02.git/app.234bd517.js.map
+//# sourceMappingURL=/js-hw-02.git/app.1bb824e2.js.map
