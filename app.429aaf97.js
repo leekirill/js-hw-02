@@ -227,11 +227,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.overlayListener = exports.galleryListener = exports.closeBtnListener = void 0;
 
-var el = _interopRequireWildcard(require("../src/elements.js"));
+var el = _interopRequireWildcard(require("./elements"));
 
 var _openLightBox = _interopRequireDefault(require("./openLightBox.js"));
 
-var fn = _interopRequireWildcard(require("../src/closeLightBox.js"));
+var fn = _interopRequireWildcard(require("./closeLightBox.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -245,7 +245,7 @@ var closeBtnListener = el.lightBox.addEventListener("click", fn.onClickCloseLigh
 exports.closeBtnListener = closeBtnListener;
 var overlayListener = el.lightBox.addEventListener("click", fn.onClickOverlayCloseLightBox);
 exports.overlayListener = overlayListener;
-},{"../src/elements.js":"ZJoy","./openLightBox.js":"B3Et","../src/closeLightBox.js":"OVlc"}],"zSrF":[function(require,module,exports) {
+},{"./elements":"ZJoy","./openLightBox.js":"B3Et","./closeLightBox.js":"OVlc"}],"zSrF":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2629,4 +2629,4 @@ require("./elements");
 
 require("./markup");
 },{"./listeners":"YYzY","./closeLightBox":"OVlc","./elements":"ZJoy","./markup":"rW4W"}]},{},["vZyd"], null)
-//# sourceMappingURL=/js-hw-02.git/app.5189cbad.js.map
+//# sourceMappingURL=/js-hw-02.git/app.429aaf97.js.map
