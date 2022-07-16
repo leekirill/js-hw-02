@@ -245,7 +245,7 @@ var closeBtnListener = el.lightBox.addEventListener("click", fn.onClickCloseLigh
 exports.closeBtnListener = closeBtnListener;
 var overlayListener = el.lightBox.addEventListener("click", fn.onClickOverlayCloseLightBox);
 exports.overlayListener = overlayListener;
-},{"../src/elements.js":"ZJoy","./openLightBox.js":"B3Et","../src/closeLightBox.js":"OVlc"}],"ebo5":[function(require,module,exports) {
+},{"../src/elements.js":"ZJoy","./openLightBox.js":"B3Et","../src/closeLightBox.js":"OVlc"}],"zSrF":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2611,14 +2611,14 @@ exports.default = _default;
 
 var _elements = require("./elements");
 
-var _galleryItems = _interopRequireDefault(require("./gallery-items"));
+var _galleryItems = _interopRequireDefault(require("./gallery/gallery-items"));
 
 var _markup = _interopRequireDefault(require("./template/markup"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _elements.galleryEl.insertAdjacentHTML("afterbegin", (0, _markup.default)(_galleryItems.default));
-},{"./elements":"ZJoy","./gallery-items":"ebo5","./template/markup":"DRDA"}],"vZyd":[function(require,module,exports) {
+},{"./elements":"ZJoy","./gallery/gallery-items":"zSrF","./template/markup":"DRDA"}],"vZyd":[function(require,module,exports) {
 "use strict";
 
 require("./listeners");
@@ -2629,4 +2629,4 @@ require("./elements");
 
 require("./markup");
 },{"./listeners":"YYzY","./closeLightBox":"OVlc","./elements":"ZJoy","./markup":"rW4W"}]},{},["vZyd"], null)
-//# sourceMappingURL=/js-hw-02.git/app.1bb824e2.js.map
+//# sourceMappingURL=/js-hw-02.git/app.5189cbad.js.map
