@@ -1,6 +1,6 @@
-import * as el from "../src/elements.js";
+import * as el from "./elements";
 import onClickOpenLightBox from "./openLightBox.js";
-import * as fn from "../src/closeLightBox.js";
+import * as fn from "./closeLightBox.js";
 export { galleryListener, closeBtnListener, overlayListener };
 
 const galleryListener = el.galleryEl.addEventListener(

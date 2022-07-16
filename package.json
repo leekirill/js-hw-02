@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "dev": "parcel index.html",
-    "build": "parcel build index.html --public-url /js-hw-02.git/",
+    "build": "parcel build index.html --no-minify --public-url /js-hw-02.git/",
     "deploy": "gh-pages -d dist",
     "predeploy": "npm run build"
   },
@@ -21,6 +21,7 @@
   "homepage": "https://leekirill.github.io/js-hw-02",
   "devDependencies": {
     "parcel": "^2.6.2",
+    "parcel-plugin-handlebars-precompile": "^1.0.2",
     "parcel-plugin-nuke-dist": "^1.0.1"
   },
   "dependencies": {
