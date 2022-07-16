@@ -2621,12 +2621,12 @@ _elements.galleryEl.insertAdjacentHTML("afterbegin", (0, _markup.default)(_galle
 },{"./elements":"ZJoy","./gallery/gallery-items":"zSrF","./template/markup":"DRDA"}],"vZyd":[function(require,module,exports) {
 "use strict";
 
-require("./listeners");
+require("./listeners.js");
 
-require("./closeLightBox");
+require("./closeLightBox.js");
 
-require("./elements");
+require("./elements.js");
 
-require("./markup");
-},{"./listeners":"YYzY","./closeLightBox":"OVlc","./elements":"ZJoy","./markup":"rW4W"}]},{},["vZyd"], null)
-//# sourceMappingURL=/js-hw-02.git/app.429aaf97.js.map
+require("./markup.js");
+},{"./listeners.js":"YYzY","./closeLightBox.js":"OVlc","./elements.js":"ZJoy","./markup.js":"rW4W"}]},{},["vZyd"], null)
+//# sourceMappingURL=/js-hw-02.git/app.087b43ea.js.map
